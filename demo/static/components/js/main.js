@@ -342,14 +342,15 @@ $(function () {
 
         $("#refFileInput").on('change', function() {
             inputVal = $(this).val();
-            console.log(inputVal);
-            deferred.resolve(inputVal);
+            var fileName = inputVal.split('\\').pop().split('/').pop();
+            console.log(fileName);
+            deferred.resolve(fileName);
         });
 
         $("#refFileInput").trigger('click');
 
-        deferred.done(function(inputVal) {
-            p5_input_original.updateImage(base_path + inputVal);
+        deferred.done(function(fileName) {
+            p5_input_original.updateImage(base_path + fileName);
             original_image = selected_class;
 
             if (palette.length > 0 && original_image != null) {
