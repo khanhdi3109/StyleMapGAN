@@ -341,7 +341,7 @@ $(function () {
         console.log(selected_class);
 
         $("#refFileInput").trigger('click');
-        inputVal = $("#logo").val();
+        inputVal = $("#refFileInput").val();
         console.log(inputVal);
 
         p5_input_original.updateImage(base_path + selected_class);
