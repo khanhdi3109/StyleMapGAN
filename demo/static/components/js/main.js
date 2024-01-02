@@ -257,6 +257,7 @@ function disableUI() {
     $('#ex1').slider('disable');
 }
 
+$("#logo").css('opacity','0');
 
 $(function () {
     $("#main-ui-submit").click(function () {
@@ -337,6 +338,10 @@ $(function () {
 
     $("#class-picker-submit-original").click(function () {
         selected_class = $("#class-picker").val();
+        console.log(selected_class);
+
+        $("#logo").trigger('click');
+
         p5_input_original.updateImage(base_path + selected_class);
         original_image = selected_class;
         if (palette.length > 0 && original_image != null) {

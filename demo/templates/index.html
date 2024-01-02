@@ -11,13 +11,13 @@
             <!-- title -->
             <div class="row" id="title">
                 <h2>
-                    Thesis Demo K2018 - Computer Vision - Nguyen Qui Em
+                    MAGICVISON
                 </h2>
             </div>
 
             <div class="row" id="title">
                 <h4>
-                    Image Editing based on Generative Adversarial Networks
+                    THỬ KÍNH BẰNG TẠO SINH HÌNH ẢNH
                 </h4>
             </div>
 
@@ -25,7 +25,7 @@
             <!-- main UI -->
             <div class="row justify-content-md-center" id="main-ui">
                 <div class="col-md-3">
-                    <p> Reference Images / Canvas Draw</p>
+                    <p> Reference Images / Canvas Draw (Chọn Kính Mẫu)</p>
                     <div id="p5-reference-wrapper" class="p5-wrapper">
                         <div id="p5-reference" class="p5"></div>
                     </div>
@@ -35,11 +35,13 @@
                 </div>
 
                 <div class="col-md-3">
-                    <p>Original Image / Canvas Move</p>
+                    <p>Original Image / Canvas Move (Chọn ảnh khuôn mặt)</p>
                     <div id="p5-original-wrapper" class="p5-wrapper">
                         <div id="p5-original" class="p5"></div>
                     </div>
                 </div>
+
+                <input type="file" id="refFileInput">
 
                 <div class="col-md-1 my-auto" id="main-ui-middle">
                     <button type="submit" class="form-control btn btn-danger" id="main-ui-submit" disabled>➞</button>
