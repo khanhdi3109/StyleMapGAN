@@ -338,16 +338,24 @@ $(function () {
         selected_class = $("#class-picker").val();
         console.log(selected_class);
 
-        clickRes = $("#refFileInput").trigger('click');
-        console.log(clickRes);
-        inputVal = $("#refFileInput").val();
-        console.log(inputVal);
+        var deferred = $.Deferred();
 
-        p5_input_original.updateImage(base_path + inputVal);
-        original_image = selected_class;
-        if (palette.length > 0 && original_image != null) {
-            enableUI();
-        }
+        $("#refFileInput").on('change', function() {
+            inputVal = $(this).val();
+            console.log(inputVal);
+            deferred.resolve(inputVal);
+        });
+
+        $("#refFileInput").trigger('click');
+
+        deferred.done(function(inputVal) {
+            p5_input_original.updateImage(base_path + inputVal);
+            original_image = selected_class;
+
+            if (palette.length > 0 && original_image != null) {
+                enableUI();
+            }
+        });
     });
 
     $("#palette-eraser").click(function () {
