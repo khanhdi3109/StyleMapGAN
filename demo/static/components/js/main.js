@@ -278,6 +278,18 @@ $(function () {
 
     for (var i = 0; i < image_paths.length; i++) {
         var image_name = image_paths[i];
+        var excluded = [
+            "501_9.png",
+            "4_16.png",
+            "11_68.png",
+            "15_6.png",
+            "19_30.png",
+            "103_6.png",
+            "445_28.png"
+        ]
+        if (excluded.includes(image_name)) {
+            continue;
+        }
 
         $("#class-picker").append(
             '<option data-img-src="' + base_path + image_name + '" data-img-alt="' + image_name + '" value="' + (image_name) + '">' + image_name + '</option>'
