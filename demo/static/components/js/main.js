@@ -257,8 +257,6 @@ function disableUI() {
     $('#ex1').slider('disable');
 }
 
-$("#refFileInput").css('opacity','0');
-
 $(function () {
     $("#main-ui-submit").click(function () {
         updateResult();
@@ -340,11 +338,12 @@ $(function () {
         selected_class = $("#class-picker").val();
         console.log(selected_class);
 
-        $("#refFileInput").trigger('click');
+        clickRes = $("#refFileInput").trigger('click');
+        console.log(clickRes);
         inputVal = $("#refFileInput").val();
         console.log(inputVal);
 
-        p5_input_original.updateImage(base_path + selected_class);
+        p5_input_original.updateImage(base_path + inputVal);
         original_image = selected_class;
         if (palette.length > 0 && original_image != null) {
             enableUI();
